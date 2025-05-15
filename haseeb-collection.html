@@ -200,7 +200,7 @@
         }
 
         .hero h1 {
-            font-size: 60px;
+            font-size: 75px;
             margin-bottom: 20px;
             font-weight: 700;
             line-height: 1.2;
@@ -212,17 +212,43 @@
         }
 
         .btn {
-            padding: 12px 30px;
-            background: var(--white);
-            color: var(--black);
-            border: none;
-            font-weight: 500;
-            letter-spacing: 1px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            font-size: 14px;
-        }
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: transparent;
+      color: var(--white);
+      border: 2px solid var(--white);
+      padding: 15px 35px;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      cursor: pointer;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+    
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: var(--white);
+      transition: all 0.4s ease;
+      z-index: -1;
+    }
+    
+    .btn:hover {
+      color: #222;
+    }
+    
+    .btn:hover::before {
+      left: 0;
+    }
+    
 
 
         /* Products Grid */
@@ -711,7 +737,7 @@
 
         @media (max-width: 480px) {
             .hero h1 {
-                font-size: 28px;
+                font-size: 55px;
             }
 
             .hero p {
@@ -737,7 +763,6 @@
     padding: 20px;
     overflow-y: auto;
 }
-
 .cart-sidebar.active {
     right: 0;
 }
@@ -1444,7 +1469,49 @@ h5{
             font-size: 18px;
         }
 
+  
         
+        .video-background {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            z-index: 0;
+            object-fit: cover;
+        }
+        
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .hero {
+                height: 80vh;
+                min-height: 500px;
+                padding: 0 8%;
+            }
+            
+            .hero-content {
+                max-width: 100%;
+            }
+            
+            .hero h1 {
+                font-size: clamp(2rem, 8vw, 3.5rem);
+            }
+            
+            .btn {
+                padding: 10px 25px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero {
+                height: 70vh;
+                min-height: 450px;
+                text-align: left;
+            }
+        }      
     </style>
 </head>
 <body>
@@ -1495,8 +1562,7 @@ h5{
         </div>
     </header>
 
-    <!-- Main Content Container -->
-    <div class="main-content">
+  <div class="main-content">
         <!-- Hero Section -->
         <section class="hero" id="home-section">
             <div class="hero-content">
@@ -1505,6 +1571,7 @@ h5{
                 <button class="btn" onclick="scrollToSection('#products-section')">Shop Now</button>
             </div>
         </section><br><br>
+
 
          <h2 class="section-title" style="font-weight: 500;">EXPLORE OUR COLLECTION</h2><br><br>
  <div class="slider-container">
@@ -1629,6 +1696,68 @@ h5{
                     </div>
                 </div>
 
+                <div class="product-card" data-product="6">
+    <span class="product-badge">Limited</span>
+                    <img src="https://www.mashalcouture.com/cdn/shop/files/designofkurtapajama_ef38660a-e46a-4f0d-b818-806efd7183e7.jpg?v=1709980688" alt="Cargo Pants" class="product-image">
+                    <div class="product-info">
+                        <div>
+                            <h3 class="product-title">Kurta For Men </h3>
+                            <p class="product-price">Rs. 1900.00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-product="6">
+    <span class="product-badge">Limited</span>
+                    <img src="https://www.mashalcouture.com/cdn/shop/files/designofkurtapajama_ef38660a-e46a-4f0d-b818-806efd7183e7.jpg?v=1709980688" alt="Cargo Pants" class="product-image">
+                    <div class="product-info">
+                        <div>
+                            <h3 class="product-title">Kurta For Men </h3>
+                            <p class="product-price">Rs. 1900.00</p>
+                        </div>
+                    </div>
+                </div>
+<div class="product-card" data-product="6">
+    <span class="product-badge">Limited</span>
+                    <img src="https://www.mashalcouture.com/cdn/shop/files/designofkurtapajama_ef38660a-e46a-4f0d-b818-806efd7183e7.jpg?v=1709980688" alt="Cargo Pants" class="product-image">
+                    <div class="product-info">
+                        <div>
+                            <h3 class="product-title">Kurta For Men </h3>
+                            <p class="product-price">Rs. 1900.00</p>
+                        </div>
+                    </div>
+                </div>
+<div class="product-card" data-product="6">
+    <span class="product-badge">Limited</span>
+                    <img src="https://www.mashalcouture.com/cdn/shop/files/designofkurtapajama_ef38660a-e46a-4f0d-b818-806efd7183e7.jpg?v=1709980688" alt="Cargo Pants" class="product-image">
+                    <div class="product-info">
+                        <div>
+                            <h3 class="product-title">Kurta For Men </h3>
+                            <p class="product-price">Rs. 1900.00</p>
+                        </div>
+                    </div>
+                </div>
+<div class="product-card" data-product="6">
+    <span class="product-badge">Limited</span>
+                    <img src="https://www.mashalcouture.com/cdn/shop/files/designofkurtapajama_ef38660a-e46a-4f0d-b818-806efd7183e7.jpg?v=1709980688" alt="Cargo Pants" class="product-image">
+                    <div class="product-info">
+                        <div>
+                            <h3 class="product-title">Kurta For Men </h3>
+                            <p class="product-price">Rs. 1900.00</p>
+                        </div>
+                    </div>
+                </div>
+<div class="product-card" data-product="6">
+    <span class="product-badge">Limited</span>
+                    <img src="https://www.mashalcouture.com/cdn/shop/files/designofkurtapajama_ef38660a-e46a-4f0d-b818-806efd7183e7.jpg?v=1709980688" alt="Cargo Pants" class="product-image">
+                    <div class="product-info">
+                        <div>
+                            <h3 class="product-title">Kurta For Men </h3>
+                            <p class="product-price">Rs. 1900.00</p>
+                        </div>
+                    </div>
+                </div>
+
                  <div class="product-card" data-product="7">
                     <span class="product-badge">Limited</span>
                     <img src="https://images.unsplash.com/photo-1551232864-3f0890e580d9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Cargo Pants" class="product-image">
@@ -1652,8 +1781,62 @@ h5{
                 </div>
 
             </div>
-        </section>
+             <button class="discover-more-btn">Discover More</button>
 
+        </section>
+<style>
+    .discover-more-btn {
+    display: block;
+    margin: 30px auto;
+    padding: 12px 30px;
+    background: var(--black);
+    color: var(--white);
+    border: none;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-size: 14px;
+    border-radius: 2px;
+}
+
+.discover-more-btn:hover {
+    background: var(--accent);
+}
+
+/* Hide products beyond the first 8 initially */
+.products-grid .product-card:nth-child(n+13) {
+    display: none;
+}           
+</style>
+
+<script>
+    // Add this to your existing JavaScript
+document.addEventListener('DOMContentLoaded', function() {
+    const discoverBtn = document.querySelector('.discover-more-btn');
+    const productCards = document.querySelectorAll('.product-card');
+    
+    // Only show the button if there are more than 8 products
+    if (productCards.length > 8) {
+        discoverBtn.style.display = 'block';
+    } else {
+        discoverBtn.style.display = 'none';
+    }
+    
+    discoverBtn.addEventListener('click', function() {
+        // Show all hidden products
+        document.querySelectorAll('.products-grid .product-card:nth-child(n+9)').forEach(card => {
+            card.style.display = 'block';
+            // Trigger animation for newly shown cards
+            card.classList.add('animate-in');
+        });
+        
+        // Hide the button after clicking
+        discoverBtn.style.display = 'none';
+    });
+});
+</script>
 <!-- Product 1 --><!-- Product 1 --><!-- Product 1 --><!-- Product 1 --><!-- Product 1 --><!-- Product 1 --><!-- Product 1 -->
 
           <section class="products-section" id="products-section">
@@ -1944,7 +2127,143 @@ h5{
               </div>
             </div>
           </section>
-            
+    
+            <section class="zero-section">
+    <div class="center-icon">
+      <i class="fab fa-youtube"></i>
+    </div>
+    <div class="rotating-text" id="rotatingText"></div>
+  </section>
+<script>
+     const text = "FALCON INDIA • ";
+    const rotatingText = document.getElementById("rotatingText");
+
+    for (let i = 0; i < text.length; i++) {
+      const span = document.createElement("span");
+      span.innerText = text[i];
+      const rotation = (i * 360) / text.length;
+      span.style.setProperty('--rotation', `${rotation}deg`);
+      span.style.transform = `rotate(${rotation}deg) translateX(100px)`;
+      rotatingText.appendChild(span);
+    }
+</script>
+<style>
+.zero-section {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: url('Images/banner.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 90vh;
+}
+
+    .center-icon {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .center-icon i {
+      font-size: 60px;
+      color: rgb(255, 255, 255);
+      cursor: pointer;
+    }
+
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(8px); }
+    }
+
+    .rotating-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 200px;
+      height: 200px;
+      font-weight: bold;
+      animation: rotateText 10s linear infinite;
+      pointer-events: none;
+    }
+
+    .rotating-text span {
+      font-weight: bold;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform-origin: 0 0;
+      font-size: 14px;
+    color: #ffffff;
+
+      letter-spacing: -1px;
+    }
+
+    @keyframes rotateText {
+      from {
+        transform: translate(-50%, -50%) rotate(0deg);
+      }
+      to {
+        transform: translate(-50%, -50%) rotate(360deg);
+      }
+    }
+
+    /* Mobile Adjustments */
+    @media (max-width: 768px) {
+      .center-icon {
+        width: 70px;
+        height: 70px;
+      }
+
+      .center-icon i {
+        font-size: 40px;
+      }
+
+      .rotating-text {
+        width: 150px;
+        height: 150px;
+      }
+
+      .rotating-text span {
+        font-size: 10px;
+        transform-origin: 0 0;
+        transform: rotate(var(--rotation)) translateX(75px) !important;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .center-icon {
+        width: 60px;
+        height: 60px;
+      }
+
+      .center-icon i {
+        font-size: 35px;
+      }
+
+      .rotating-text {
+        width: 130px;
+        height: 130px;
+      }
+
+      .rotating-text span {
+        font-size: 9px;
+        transform: rotate(var(--rotation)) translateX(65px) !important;
+      }
+
+      .triangle-icon {
+        font-size: 20px;
+      }
+    }
+</style>
 
         <!-- Contact Section -->
         <section class="contact-section" id="contact-section">
@@ -1991,7 +2310,7 @@ h5{
                 </p>
 
                 <div class="size-selector">
-                    <h3>Quantity</h3>
+                    <h3>Color Type:</h3>
                     <div class="size-options" id="size-options">
                         <!-- Size options will be added dynamically -->
                     </div>
@@ -2095,14 +2414,17 @@ h5{
         <div class="footer-container">
             
             <div class="footer-col">
-                <div class="footer-logo">Haseeb Collection</div>
-                <p>Premium streetwear for the modern urban explorer. Quality craftsmanship meets contemporary design.</p>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                </div>
-            </div>
+    <div class="footer-logo" style="display: flex; align-items: center; gap: 10px; font-family: 'Cinzel Decorative';">
+        <img src="https://img.freepik.com/free-vector/bird-colorful-logo-gradient-vector_343694-1365.jpg?semt=ais_hybrid&w=740" alt="Haseeb Collection Logo" style="height: 150px;">
+    </div>
+    <p>Premium streetwear for the modern urban explorer. Quality craftsmanship meets contemporary design.</p>
+    <div class="social-links">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+    </div>
+</div>
+
             <div class="footer-col">
                 <div class="footer-links">
                     <h3>Shop</h3>
@@ -2133,7 +2455,10 @@ h5{
                     <div class="newsletter">
                         <p>Subscribe for updates and exclusive offers</p>
                         <input type="email" placeholder="Your Email">
-                        <button type="submit">Subscribe</button>
+                          <button type="submit" onclick="showToast()">Subscribe</button>
+
+    <!-- Fake toaster -->
+    <div id="toast" class="toast">Subscribed Successfully!</div>
                     </div>
                 </div>
             </div>
@@ -2324,6 +2649,7 @@ document.getElementById('order-form').addEventListener('submit', function(e) {
     
     showToast('Order submitted successfully!');
 });
+
 
 // Initialize cart
 updateCart();
